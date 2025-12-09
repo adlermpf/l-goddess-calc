@@ -1,0 +1,36 @@
+import type { LevelStep } from "../domain/types";
+
+export const LEVEL_STEPS: LevelStep[] = [
+  { from: 1,  to: 2,  points: 5,    credits: 600 },
+  { from: 2,  to: 3,  points: 10,   credits: 900 },
+  { from: 3,  to: 4,  points: 15,   credits: 1400 },
+  { from: 4,  to: 5,  points: 20,   credits: 1900 },
+  { from: 5,  to: 6,  points: 40,   credits: 2500 },
+  { from: 6,  to: 7,  points: 60,   credits: 3500 },
+  { from: 7,  to: 8,  points: 80,   credits: 5500 },
+  { from: 8,  to: 9,  points: 100,  credits: 7000 },
+  { from: 9,  to:10,  points: 120,  credits: 9000 },
+  { from:10,  to:11,  points: 150,  credits: 11000 },
+  { from:11,  to:12,  points: 200,  credits: 14000 },
+  { from:12,  to:13,  points: 250,  credits: 17000 },
+  { from:13,  to:14,  points: 320,  credits: 20000 },
+  { from:14,  to:15,  points: 400,  credits: 24000 },
+  { from:15,  to:16,  points: 500,  credits: 28000 },
+  { from:16,  to:17,  points: 700,  credits: 32000 },
+  { from:17,  to:18,  points: 850,  credits: 36000 },
+  { from:18,  to:19,  points: 1000, credits: 40000 },
+  { from:19,  to:20,  points: 1300, credits: 44000 },
+  { from:20,  to:21,  points: 1700, credits: 48000 },
+  { from:21,  to:22,  points: 2200, credits: 52000 },
+  { from:22,  to:23,  points: 2900, credits: 57000 },
+  { from:23,  to:24,  points: 3700, credits: 62000 },
+  { from:24,  to:25,  points: 4800, credits: 68000 },
+  { from:25,  to:26,  points: 6000, credits: 75000 },
+  { from:26,  to:27,  points: 6150, credits: 80000 },
+  { from:27,  to:28,  points: 6300, credits: 86000 },
+  { from:28,  to:29,  points: 6450, credits: 93000 },
+  { from:29,  to:30,  points: 6650, credits: 101000 },
+  { from:30,  to:31,  points: 6900, credits: 110000 },
+];
+
+export const REBOOT_MARKS = [6, 11, 16, 21, 25] as const;

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>Game Resource Calculator</title>
+  </head>
+  <body>
+    <main id="app" class="container">
+      <div class="header">
+        <h1>Game Resource Calculator</h1>
+      </div>
+
+      <div class="layout">
+        <!-- LEFT: Inputs -->
+        <div class="col">
+          <section class="card">
+            <h2>Cards & Buff</h2>
+            <div class="grid">
+              <label
+                >Common <input id="inCommon" type="number" min="0" value="30"
+              /></label>
+              <label
+                >Rare <input id="inRare" type="number" min="0" value="3509"
+              /></label>
+              <label
+                >Epic <input id="inEpic" type="number" min="0" value="1905"
+              /></label>
+              <label
+                >Legendary (have)
+                <input id="inLegendary" type="number" min="0" value="282"
+              /></label>
+              <label
+                >Guild buff (%)
+                <input id="inBuff" type="number" min="0" max="100" value="20"
+              /></label>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>Leveling</h2>
+            <div class="grid">
+              <label
+                >Current reboot
+                <select id="inCurrentReboot">
+                  <option value="0">R0</option>
+                  <option value="1">R1</option>
+                  <option value="2">R2</option>
+                  <option value="3">R3</option>
+                  <option value="4">R4</option>
+                  <option value="5">R5</option>
+                </select>
+              </label>
+
+              <label
+                >Current level (1–31)
+                <input
+                  id="inCurrentLevel"
+                  type="number"
+                  min="1"
+                  max="31"
+                  value="14"
+                />
+              </label>
+
+              <label
+                >Target reboot
+                <select id="inTargetReboot">
+                  <!-- options are populated dynamically: R{current} and R{current+1} -->
+                </select>
+              </label>
+
+              <label
+                >Target level (1–31)
+                <input
+                  id="inTargetLevel"
+                  type="number"
+                  min="1"
+                  max="31"
+                  placeholder="optional"
+                />
+              </label>
+
+              <label
+                >Credits available (optional)
+                <input id="inCredits" type="number" min="0" value="0" />
+              </label>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT: Results -->
+        <div class="col">
+          <section class="card emphasis">
+            <h2>Conversion Result</h2>
+            <div id="conversionRatios"></div>
+            <div id="conversionSummary"></div>
+            <div id="conversionRemainders"></div>
+            <div id="validationErrors" style="margin-top: 8px"></div>
+          </section>
+
+          <section class="card">
+            <div class="row-between">
+              <h2>Level Simulation</h2>
+              <button id="btnShowSteps" class="btn">Show steps…</button>
+            </div>
+            <div id="levelSummary"></div>
+            <div id="targetAnalysis" style="margin-top: 8px"></div>
+            <div id="levelSteps" class="muted small">
+              Steps are shown in the dialog.
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal dialog for steps -->
+    <dialog id="stepsDialog">
+      <div class="dialog">
+        <header class="dialog-header">
+          <div>Level-up steps</div>
+          <button id="btnCloseSteps" class="btn btn-ghost">Close</button>
+        </header>
+        <div id="stepsDialogBody" class="dialog-body"></div>
+      </div>
+    </dialog>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
