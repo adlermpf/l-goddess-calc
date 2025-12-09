@@ -208,17 +208,18 @@ function validate(): string[] {
           .map((e) => `<div>• ${e}</div>`)
           .join("")}</div>`
       : "";
-
-    // avoid running plan if invalid
-    if (errors.length) {
-      levelSummary.innerHTML =
-        `Start Level: <b>${currentLevel}</b> · Usable Legendary: <b>${conv.totalLegendary}</b><br/>` +
-        `<span class="err">Fix the validation errors to simulate leveling.</span>`;
-      levelSteps.innerHTML = `<div class="step">No steps to show.</div>`;
-      targetAnalysis.innerHTML = ``;
-      fitToViewport();
-      return;
-    }
+    
+    //bugged:
+    // avoid running plan if invalid 
+    // if (errors.length) {
+    //   levelSummary.innerHTML =
+    //     `Start Level: <b>${currentLevel}</b> · Usable Legendary: <b>${conv.totalLegendary}</b><br/>` +
+    //     `<span class="err">Fix the validation errors to simulate leveling.</span>`;
+    //   levelSteps.innerHTML = `<div class="step">No steps to show.</div>`;
+    //   targetAnalysis.innerHTML = ``;
+    //   fitToViewport();
+    //   return;
+    // }
 
     const plan = planLevels({
       currentLevel,
